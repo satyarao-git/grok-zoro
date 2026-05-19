@@ -1,0 +1,12 @@
+{
+  "name": "Zoro",
+  "short_name": "Zoro",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F7F9FC",
+  "theme_color": "#1976D2",
+  "description": "A clean GTD productivity app.",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": []
+}
