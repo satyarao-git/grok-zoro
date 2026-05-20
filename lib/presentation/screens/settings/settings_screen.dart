@@ -128,7 +128,7 @@ class SettingsScreen extends ConsumerWidget {
                   decoration: const InputDecoration(
                     labelText: 'AI base URL',
                     helperText:
-                        'Local proxy: http://127.0.0.1:8787 or OpenAI-compatible endpoint.',
+                        'Use https://zoro-windows.web.app, a local proxy, or an OpenAI-compatible endpoint.',
                   ),
                   keyboardType: TextInputType.url,
                   onFieldSubmitted: (value) {
@@ -146,7 +146,8 @@ class SettingsScreen extends ConsumerWidget {
                   obscureText: true,
                   decoration: const InputDecoration(
                     labelText: 'API key',
-                    helperText: 'Leave blank when using a trusted local proxy.',
+                    helperText:
+                        'Leave blank when using the trusted Zoro endpoint or local proxy.',
                   ),
                   onFieldSubmitted: (value) {
                     ref

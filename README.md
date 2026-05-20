@@ -72,3 +72,37 @@ powershell -ExecutionPolicy Bypass -File .\tools\deploy_firebase_hosting.ps1
 ```
 
 The Firebase project alias is configured in `.firebaserc`. `firebase.json` includes an app-route fallback so deep links like `/calendar` and `/processing/<id>` load the Flutter app correctly. It also routes `/assist`, `/clarify`, and `/health` to the Firebase `aiProxy` function so AI keys stay server-side. On Windows, `firebase.cmd` avoids PowerShell script execution policy blocks.
+
+## Mobile Builds
+
+Android and iOS platform projects are included with the app identity `com.satya.zoro` and display name `Zoro`.
+
+Mobile defaults use the deployed Firebase endpoint:
+
+```text
+https://zoro-windows.web.app
+```
+
+That endpoint serves `/assist` and `/clarify` through Firebase Functions, so mobile users do not need a local proxy or a client-side AI key.
+
+Android debug build:
+
+```powershell
+& "C:\Users\Satya\AppData\Local\Microsoft\WinGet\Packages\pingbird.Puro_Microsoft.Winget.Source_8wekyb3d8bbwe\puro.exe" flutter build apk --debug
+```
+
+Android release build:
+
+```powershell
+& "C:\Users\Satya\AppData\Local\Microsoft\WinGet\Packages\pingbird.Puro_Microsoft.Winget.Source_8wekyb3d8bbwe\puro.exe" flutter build appbundle --release
+```
+
+For Play Store release, configure a real Android signing key before uploading the `.aab`.
+
+iOS must be built on macOS with Xcode:
+
+```bash
+puro flutter build ipa --release
+```
+
+In Xcode, open `ios/Runner.xcworkspace`, select your Apple team, confirm the bundle identifier, then archive for TestFlight or App Store. Existing mobile app data is preserved across updates as long as the app keeps the same bundle/application ID and the user does not uninstall or clear app data.

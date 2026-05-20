@@ -52,6 +52,12 @@ class HttpAiClarifyService implements AiClarifyService {
           'contexts': contexts.map((context) => context.name).toList(),
         }),
       );
+    } on http.ClientException catch (error) {
+      throw AiClarifyException(
+        'AI clarification could not reach the configured service. Use '
+        'https://zoro-windows.web.app, a local proxy, or another reachable '
+        'endpoint. Details: ${error.message}',
+      );
     } finally {
       if (_client == null) {
         client.close();

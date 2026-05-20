@@ -60,9 +60,10 @@ class HttpAiAssistService implements AiAssistService {
   }
 
   String _connectionMessage(String detail) {
-    return 'AI Assist could not reach the configured AI service. Start the '
+    return 'AI Assist could not reach the configured AI service. Use the '
+        'deployed Zoro endpoint at https://zoro-windows.web.app, start the '
         'local proxy at http://127.0.0.1:8787, or update Settings > AI '
-        'Integration with a reachable endpoint. Details: $detail';
+        'Integration with another reachable endpoint. Details: $detail';
   }
 
   Uri _endpointFor(Uri baseUri, AppSettings settings) {

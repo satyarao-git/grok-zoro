@@ -136,17 +136,14 @@ class VoiceInputNotifier extends StateNotifier<VoiceInputState> {
     final settings = _ref.read(appSettingsProvider);
     final resolvedLocaleId = localeId ?? settings.voiceLocaleId;
     await _speech.listen(
-      localeId: resolvedLocaleId,
-      listenFor: const Duration(minutes: 3),
-      pauseFor: const Duration(seconds: 8),
-      // ignore: deprecated_member_use
-      listenMode: ListenMode.dictation,
-      // speech_to_text 6.6.0 exposes these directly; newer releases move them
-      // into SpeechListenOptions, so keep this isolated for easy upgrading.
-      // ignore: deprecated_member_use
-      partialResults: true,
-      // ignore: deprecated_member_use
-      cancelOnError: false,
+      listenOptions: SpeechListenOptions(
+        localeId: resolvedLocaleId,
+        listenFor: const Duration(minutes: 3),
+        pauseFor: const Duration(seconds: 8),
+        listenMode: ListenMode.dictation,
+        partialResults: true,
+        cancelOnError: false,
+      ),
       onResult: _handleResult,
       onSoundLevelChange: _handleSoundLevel,
     );

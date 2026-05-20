@@ -10,7 +10,7 @@ class AppSettingsSchema {
   String defaultContextName = '@Anywhere';
   int weeklyReviewWeekday = DateTime.sunday;
   bool aiEnabled = false;
-  String aiBaseUrl = 'http://127.0.0.1:8787';
+  String aiBaseUrl = 'https://zoro-windows.web.app';
   String aiModel = 'gpt-5.2';
   String? aiApiKey;
   String? voiceLocaleId;

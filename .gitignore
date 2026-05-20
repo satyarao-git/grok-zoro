@@ -27,6 +27,7 @@ flutter_*.log
 # IDE
 .idea/
 .vscode/
+*.iml
 
 # OS/editor temp files
 *.swp

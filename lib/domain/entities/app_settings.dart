@@ -2,12 +2,14 @@ const _unsetVoiceLocale = Object();
 const _unsetAiApiKey = Object();
 
 class AppSettings {
+  static const defaultAiBaseUrl = 'https://zoro-windows.web.app';
+
   const AppSettings({
     this.voiceCaptureEnabled = true,
     this.defaultContextName = '@Anywhere',
     this.weeklyReviewWeekday = DateTime.sunday,
     this.aiEnabled = false,
-    this.aiBaseUrl = 'http://127.0.0.1:8787',
+    this.aiBaseUrl = defaultAiBaseUrl,
     this.aiModel = 'gpt-5.2',
     this.aiApiKey,
     this.voiceLocaleId,
