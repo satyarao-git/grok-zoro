@@ -75,7 +75,7 @@ The Firebase project alias is configured in `.firebaserc`. `firebase.json` inclu
 
 ## Mobile Builds
 
-Android and iOS platform projects are included with the app identity `com.satya.zoro` and display name `Zoro`.
+Android and iOS platform projects are included with the app identity `com.neuralreach.zoro` and display name `Zoro`.
 
 Mobile defaults use the deployed Firebase endpoint:
 

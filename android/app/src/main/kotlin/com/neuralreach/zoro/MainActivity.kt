@@ -1,4 +1,4 @@
-package com.satya.zoro
+package com.neuralreach.zoro
 
 import io.flutter.embedding.android.FlutterActivity
 

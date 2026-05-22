@@ -24,7 +24,7 @@ subprojects {
                 namespace = if (project.name == "isar_flutter_libs") {
                     "dev.isar.isar_flutter_libs"
                 } else {
-                    "com.satya.zoro.${project.name.replace('-', '_')}"
+                    "com.neuralreach.zoro.${project.name.replace('-', '_')}"
                 }
             }
         }

@@ -1,8 +1,23 @@
 # Zoro Implementation Status and Handoff Specification
 
-Last updated: May 17, 2026
+Last updated: May 21, 2026
 
 This document summarizes what has been implemented so far in the Zoro Flutter app. It is intended as a handoff/status brief for another LLM or collaborator who is brainstorming product direction and needs an accurate picture of the current application.
+
+## Latest Session Handoff - May 19-21, 2026
+
+- Added Android and iOS Flutter platform scaffolding.
+- Mobile package/bundle identity is now `com.neuralreach.zoro`.
+- Android app has internet and microphone permissions; iOS has microphone and speech recognition usage descriptions.
+- Native/mobile AI default is `https://zoro-windows.web.app`, so mobile builds call the deployed Firebase proxy for `/assist` and `/clarify`.
+- Upgraded `speech_to_text` to `7.4.0` and updated the voice listener to use `SpeechListenOptions`.
+- Added Android Gradle compatibility handling for plugin namespace/manifest issues, especially `isar_flutter_libs`.
+- Android release signing is configured via ignored local files: `android/key.properties` and `android/upload-keystore.jks`.
+- Google Play Console app/package is set up as `Zoro` / `com.neuralreach.zoro`; internal testing upload flow was started.
+- Internal test release notes must be wrapped in language tags such as `<en-US>Initial internal testing release of Zoro.</en-US>`.
+- The Play internal testing opt-in link appears after the internal testing release is rolled out.
+- Debug APK was built and installed locally on a Pixel for testing.
+- Before a Mac/iOS build, commit and push the current repo changes, then open `ios/Runner.xcworkspace` in Xcode.
 
 ## Product Summary
 
